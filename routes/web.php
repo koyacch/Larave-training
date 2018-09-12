@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Hello World ルーティング
+Route::get('/helloworld', function(){
+    return '<html><head><title>Laravel</title><body><h1>Hello World!</h1></body></html>';
+});
