@@ -17,8 +17,9 @@ Route::get('/', function () {
 
 // Hello World ルーティング
 // ルーティングパラメーター追加
+// 必須パラメーター追加
 
-Route::get('/helloworld/{msg}', function($msg){
+Route::get('/helloworld/{msg?}', function($msg = 'no sub directory.'){
     $html = '<html><head><title>Laravel</title><body><h1>Hello World!</h1><p>'.$msg.'</p></body></html>';
     return $html;
 });
