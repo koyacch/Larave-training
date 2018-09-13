@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 
 // Hello World ルーティング
-Route::get('/helloworld', function(){
-    return '<html><head><title>Laravel</title><body><h1>Hello World!</h1></body></html>';
+// ルーティングパラメーター追加
+
+Route::get('/helloworld/{msg}', function($msg){
+    $html = '<html><head><title>Laravel</title><body><h1>Hello World!</h1><p>'.$msg.'</p></body></html>';
+    return $html;
 });
