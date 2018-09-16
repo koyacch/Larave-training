@@ -19,10 +19,10 @@
 // ルーティングパラメーター追加
 // 必須パラメーター追加
 
-Route::get('/helloworld/{msg?}', function($msg = 'no sub directory.'){
-    $html = '<html><head><title>Laravel</title><body><h1>Hello World!</h1><p>'.$msg.'</p></body></html>';
-    return $html;
-});
+// Route::get('/helloworld/{msg?}', function($msg = 'no sub directory.'){
+//     $html = '<html><head><title>Laravel</title><body><h1>Hello World!</h1><p>'.$msg.'</p></body></html>';
+//     return $html;
+// });
 
 //ルートパラメータに変数を設定しそのままアクションに渡せる。
 
@@ -34,5 +34,12 @@ Route::get('/helloworld/{msg?}', function($msg = 'no sub directory.'){
 
 // HelloControllerのindexメソッドをrootルーティングにする。
 
-Route::get('/', 'HelloController@index');
+// Route::get('/', 'HelloController@index');
 
+// resources/views フォルダ内のindex.phpをテンプレートとし表示させる。
+
+//  無形関数中でviewメソッドを使う。responseを返してくれる。
+
+Route::get('hello', function(){
+    return view('hello.index');
+});
