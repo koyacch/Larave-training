@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 class HelloController extends Controller
 {
-    public function index(){
-        return <<<EOF
+    // ルートアクションのパラメーター変数として使う。初期値も設定。
+    
+    public function index($id = 'noid', $pass = 'nopass'){
+        return '
            <html>
                 <head>
                     <title>Hello / Index</title>
@@ -15,8 +17,8 @@ class HelloController extends Controller
                 <body>
                     <h1>Index</h1>
                     <p>これは、Helloコントローラーのindexアクションです。</p>
+                    <p>ID : '.$id.'<br>PASS : '.$pass.'</p>
                 </body>
-            </html>
-EOF;
+            </html>';
     }
 }
