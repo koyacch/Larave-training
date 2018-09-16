@@ -26,4 +26,8 @@ Route::get('/helloworld/{msg?}', function($msg = 'no sub directory.'){
 
 //ルートパラメータに変数を設定しそのままアクションに渡せる。
 
-Route::get('/{id?}/{pass?}', 'HelloController@index');
+// Route::get('/{id?}/{pass?}', 'HelloController@index');
+
+//　アクションを消去し、コントローラーをシングルアクションにした場合ははアクション名なし。
+
+Route::get('/', 'HelloController');
