@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+// Request、Responseのクラスを使えるようにする。
+
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
@@ -24,11 +27,24 @@ class HelloController extends Controller
 
     //　シングルアクションコントローラ
     
-    public function __invoke(){
-        return '<html><head><title>Hello (single)</title></head><body>
-        <h1>Single Action</h1>
-        <p>これはシングルアクションコントローラーのアクションです。</p>
+    // public function __invoke(){
+    //     return '<html><head><title>Hello (single)</title></head><body>
+    //     <h1>Single Action</h1>
+    //     <p>これはシングルアクションコントローラーのアクションです。</p>
+    //     </body></html>';
+    // }
+    
+    // ResponseおよびRequestクラス、オブジェクト使用のテスト。
+    
+    Public function index(Request $request, Response $response){
+        $html = '<html><head><title>Hello / index（Response / Request）</title></head><body>
+        <h1>Hello</h1>
+        <h2>Request</h2><p>'.$request.'</p>
+        <h2>Response</h2><p>'.$response.'</p>
         </body></html>';
+        
+        $response -> setContent($html);
+        return $response;
     }
     
 }

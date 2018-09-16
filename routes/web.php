@@ -30,4 +30,9 @@ Route::get('/helloworld/{msg?}', function($msg = 'no sub directory.'){
 
 //　アクションを消去し、コントローラーをシングルアクションにした場合ははアクション名なし。
 
-Route::get('/', 'HelloController');
+// Route::get('/', 'HelloController');
+
+// HelloControllerのindexメソッドをrootルーティングにする。
+
+Route::get('/', 'HelloController@index');
+
