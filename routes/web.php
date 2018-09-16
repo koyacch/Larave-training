@@ -40,6 +40,11 @@
 
 //  無形関数中でviewメソッドを使う。responseを返してくれる。
 
-Route::get('hello', function(){
-    return view('hello.index');
-});
+// Route::get('hello', function(){
+//     return view('hello.index');
+// });
+
+// resources/views/indexテンプレートをcontrollerからのviewメソッドで表示する。
+
+Route::get('hello', 'HelloController@index');
+

@@ -36,15 +36,20 @@ class HelloController extends Controller
     
     // ResponseおよびRequestクラス、オブジェクト使用のテスト。
     
-    Public function index(Request $request, Response $response){
-        $html = '<html><head><title>Hello / index（Response / Request）</title></head><body>
-        <h1>Hello</h1>
-        <h2>Request</h2><p>'.$request.'</p>
-        <h2>Response</h2><p>'.$response.'</p>
-        </body></html>';
+    // Public function index(Request $request, Response $response){
+    //     $html = '<html><head><title>Hello / index（Response / Request）</title></head><body>
+    //     <h1>Hello</h1>
+    //     <h2>Request</h2><p>'.$request.'</p>
+    //     <h2>Response</h2><p>'.$response.'</p>
+    //     </body></html>';
         
-        $response -> setContent($html);
-        return $response;
+    //     $response -> setContent($html);
+    //     return $response;
+    // }
+ 
+    // resources/views/indexテンプレートをviewメソッドで表示。
+    Public function index(){
+        return view('hello.index');
     }
     
 }
