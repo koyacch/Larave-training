@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Hello World ルーティング
 // ルーティングパラメーター追加
@@ -23,3 +23,5 @@ Route::get('/helloworld/{msg?}', function($msg = 'no sub directory.'){
     $html = '<html><head><title>Laravel</title><body><h1>Hello World!</h1><p>'.$msg.'</p></body></html>';
     return $html;
 });
+
+Route::get('/', 'HelloController@index');
