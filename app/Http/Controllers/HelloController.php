@@ -48,8 +48,14 @@ class HelloController extends Controller
     // }
  
     // resources/views/indexテンプレートをviewメソッドで表示。
-    Public function index(){
-        $data = [ 'msg' => 'これはコントローラーから渡されたメッセージです。'];
+    Public function index($id = '(none)'){
+        
+        // テンプレートへ渡す変数は連想配列で記述。
+        $data = [
+            'msg' => 'これはコントローラーから渡されたメッセージです。',
+            'id' => $id
+        ];
+        // viewメソッドの第二引数に配列名を入れる。
         return view('hello.index', $data);
     }
     
