@@ -49,7 +49,8 @@ class HelloController extends Controller
  
     // resources/views/indexテンプレートをviewメソッドで表示。
     Public function index(){
-        return view('hello.index');
+        $data = [ 'msg' => 'これはコントローラーから渡されたメッセージです。'];
+        return view('hello.index', $data);
     }
     
 }
