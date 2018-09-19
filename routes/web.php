@@ -46,5 +46,5 @@
 
 // resources/views/indexテンプレートをcontrollerからのviewメソッドで表示する。
 
-Route::get('hello/{id?}', 'HelloController@index');
+Route::get('hello', 'HelloController@index');
 
